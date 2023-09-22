@@ -1,1 +1,1 @@
-# SoftUni-JS
+Learning JavaScript in SoftUni academy
