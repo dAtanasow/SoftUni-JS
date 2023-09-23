@@ -1,5 +1,0 @@
-function gladiatorExpenses (input) {
-
-}
-
-gladiatorExpenses()
