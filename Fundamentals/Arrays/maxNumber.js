@@ -4,14 +4,22 @@
 //Print all top integers on the console, separated by a single space
 
 function maxNumber(arr) {
-    let n = 0
     let biggerIntegers = []
     for (let i = arr.length - 1; i >= 0; i--) {
-        if (arr[i] > n) {
-            n = arr[i]
+        let isTop = true
+        let n = arr[i]
+        for (let j = i + 1; j < arr.length; j++) {
+            let rightNum = arr[j]
+            if (rightNum >= n) {
+                isTop = false
+                break;
+            }
+        }
+        if (isTop) {
             biggerIntegers.push(n)
         }
     }
+    biggerIntegers.reverse()
     console.log(biggerIntegers.join(' '));
 }
 
