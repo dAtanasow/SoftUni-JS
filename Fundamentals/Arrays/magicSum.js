@@ -1,27 +1,30 @@
-//Write a function, which prints all unique pairs in an array of integers whose sum is equal to a given number.
+////Write a function, which prints all unique pairs in an array of integers whose sum is equal to a given number.
 
-function magicSum(arr, num) {
+function findPairs(array, targetSum) {
+    let pairs = [];
 
-    for (let j = 0; j < arr.length - 1; j++) {
-        for (let i = 1; i < arr.length; i++) {
-            if (arr[i] != arr[j] &&
-                arr[i] != num &&
-                arr[j] != num) {
-                let sum = arr[i] + arr[j]
-                if (sum == num) {
-                    let result = [arr[j], arr[i]]
-                    console.log(result.join(' '));
-                    arr.splice(i, 1)
+    for (let i = 0; i < array.length; i++) {
+        let num1 = array[i];
+        for (let j = i + 1; j < array.length; j++) {
+            let num2 = array[j];
+
+            if (num1 + num2 === targetSum) {
+                let pair = [num1, num2];
+                if (!pairs.some(p => p[0] === pair[0] && p[1] === pair[1])) {
+                    pairs.push(pair);
                 }
             }
         }
     }
+
+    pairs.forEach(pair => console.log(pair.join(' ')));
 }
-magicSum([1, 7, 6, 2, 19, 23],
+findPairs([1, 7, 6, 2, 19, 23],
     8
 )
-magicSum([14, 20, 60, 13, 7, 19, 8],
+findPairs([14, 20, 60, 13, 7, 19, 8],
     27
 )
-magicSum([1, 2, 3, 4, 5, 6],
-    6)
+findPairs([1, 2, 3, 4, 5, 6],
+    6
+)

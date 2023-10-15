@@ -10,7 +10,16 @@
 function train(input) {
     let i = 0
     let train = input[i].split(' ')
-    console.log(train);
+    i++
+    let capacity = input[i];
+    i++
+    while (i <= input.length) {
+        command = Number(input[i])
+        i++
+        if (command == Number) {
+            
+        }
+    }
 
 }
 

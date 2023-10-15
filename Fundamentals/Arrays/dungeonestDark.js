@@ -1,4 +1,4 @@
-//As a young adventurer, you seek gold and glory in the darkest dungeons there are.
+//As a young adventurer, you seek gold and glory in the darkest dungeons there are./
 //You have initial health 100 and initial coins 0. You will be given a string, representing the dungeon's rooms. Each
 //room is separated with '|' (vertical bar): "room1|room2|room3…"
 //Each room contains - an item or a monster; and a number. They are separated by a single space.

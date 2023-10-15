@@ -4,7 +4,6 @@
 //Print all top integers on the console, separated by a single space
 
 function maxNumber(arr) {
-<<<<<<< HEAD
     let biggerIntegers = []
     for (let i = arr.length - 1; i >= 0; i--) {
         let isTop = true
@@ -21,16 +20,6 @@ function maxNumber(arr) {
         }
     }
     biggerIntegers.reverse()
-=======
-    let n = 0
-    let biggerIntegers = []
-    for (let i = arr.length - 1; i >= 0; i--) {
-        if (arr[i] > n) {
-            n = arr[i]
-            biggerIntegers.push(n)
-        }
-    }
->>>>>>> 5cf513b8663c91ee6e8e4f626b0b3090aeb71335
     console.log(biggerIntegers.join(' '));
 }
 
