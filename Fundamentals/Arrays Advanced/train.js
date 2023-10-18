@@ -8,26 +8,35 @@
 //At the end, print the final state of the train (all the wagons separated by a space).
 
 function train(input) {
-    let i = 0
-    let train = input[i].split(' ')
-    i++
-    let capacity = input[i];
-    i++
-    while (i <= input.length) {
-        command = Number(input[i])
-        i++
-        if (command == Number) {
-            
-        }
-    }
+    let train = input[0].split(' ').map(Number)
+    let capacity = Number(input[1]);
 
+    for (let i = 2; i < input.length; i++) {
+        let command = input[i]
+        let tokens = command.split(' ')
+        if (tokens[0] == 'Add') {
+            let passengers = Number(tokens[1])
+            train.push(passengers);
+        } else {
+            let passengers = Number(tokens[0])
+
+            for (let i = 0; i < train.length; i++) {
+                if (train[i] + passengers <= capacity) {
+                    train[i] += passengers
+                    break;
+                }
+            }
+        }
+
+    }
+    console.log(train.join(' '));
 }
 
 train(['32 54 21 12 4 0 23',
-'75',
-'Add 10',
-'Add 0',
-'30',
-'10',
-'75']
+    '75',
+    'Add 10',
+    'Add 0',
+    '30',
+    '10',
+    '75']
 )
