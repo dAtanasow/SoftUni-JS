@@ -2,24 +2,23 @@
 
 // The input comes as a single string. The words will be separated by a single space.
 
-function occurrences(str) {
-    let words = str.toLowerCase().split(" ");
-    let freqObject = {}
-    let oddFreqWords = [];
-
+function oddOccurrences(str) {
+    let words = str.toLowerCase().split(' ');
+    let object = {};
+   
     for (let word of words) {
-        if (!freqObject[word]) {
-            freqObject[word] = 0;
-        } else {
-            freqObject[word]++
-        }
+      if (word in object) {
+        object[word]++;
+      } else {
+        object[word] = 1;
+      }
     }
-    for (let [word, freq] of Object.entries(freqObject)) {
-        if (freq % 2 == 1) {
-            oddFreqWords.push(word)
-        }
-    }
+    let oddOccur = Object.keys(object)
+      .filter((word) => object[word] % 2 === 1)
+      .sort((a, b) => a.localeCompare.b)
+   
+    console.log(oddOccur.join(' '));
+  }
 
-    console.log(oddFreqWords);
-}
-occurrences('Java C# Php PHP Java PhP 3 C# 3 1 5 C#')
+oddOccurrences('Java C# Php PHP Java PhP 3 C# 3 1 5 C#')
+oddOccurrences('Cake IS SWEET is Soft CAKE sweet Food')
