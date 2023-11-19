@@ -27,12 +27,12 @@ function piccolo(arr) {
         }
 
     }
-    parkingLot.sort((a, b) => a.localeCompare(b));
+    let sortedList = parkingLot.sort((a, b) => a.localeCompare(b));
 
-    if (parkingLot.length == 0) {
+    if (sortedList.length == 0) {
         console.log(`Parking Lot is Empty`);
     }
-    console.log(parkingLot.join('\n'));
+    console.log(sortedList.join('\n'));
 }
 
 
