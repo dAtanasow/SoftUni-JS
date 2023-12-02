@@ -31,8 +31,10 @@ function piccolo(arr) {
 
     if (sortedList.length == 0) {
         console.log(`Parking Lot is Empty`);
+    } else {
+        console.log(sortedList.join('\n'));
+
     }
-    console.log(sortedList.join('\n'));
 }
 
 
